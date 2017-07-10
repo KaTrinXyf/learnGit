@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我还是菜鸟</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		var x = 0.1;
+		var y = 0.2;
+		var z_1 = x + y;//该计算结果会出现精度损失
+		
+		//避免方法如下
+		var z_2 = (x * 10 + y * 10) / 10;
+		document.getElementById("demo").innerHTML = z_2;
+
+		var str_1 = 
+		"Hello World!";
+		var str_2 = "Hello \
+		World";
+
+		var x = 5;
+		if(x == 19);
+		{
+		document.getElementById("demo").innerHTML = "Hello";
+
+		}
+		document.getElementById("demo").innerHTML = myFunction(55);
+		function myFunction(a)
+		{
+			var power = 10;
+			return 			a * power;
+		}
+
+	</script>
+</body>
+</html>

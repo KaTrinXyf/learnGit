@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我还是菜鸟</title>
+</head>
+<body>
+	<p id="demo_1"></p>
+	<h3>你的屏幕：</h3>
+	<button type="button" onclick="newDoc()" name="">Load new document</button>
+	<button type="button" onclick="goBack()" name="">上一页</button>
+	<button type="button" onclick="goForward()" name="">下一页</button>
+	<div id="example"></div>
+	<script type="text/javascript">
+		var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		x = document.getElementById("demo_1");
+		x.innerHTML = "浏览器宽度为：" + w + ",高度为：" + h;
+		// window.resizeTo(200px,300px);
+		document.write("<br>" + "总宽度/高度：");
+		document.write(screen.width + "*" + screen.height + "<br>");
+
+		document.write("可用宽度/高度：");
+		document.write(screen.availWidth + "*" + screen.availHeight + "<br>");
+
+		document.write("色彩深度：");
+		document.write(screen.colorDepth + "<br>");
+
+		document.write("色彩分辨率：");
+		document.write(screen.pixelDepth + "<br>");
+
+		document.write(location.href + "<br>");
+		document.write(location.pathname + "<br>");
+		function newDoc()
+		{
+			window.location.assign("http://www.baidu.com");
+		}
+		function goBack()
+		{
+			window.history.back();
+		}
+		function goForward()
+		{
+			window.history.forward();
+		}
+		txt = "<p>浏览器代号：" + window.navigator.appCodeName + "</p>";
+		txt += "<p>浏览器名称：" + navigator.appName + "</p>";
+		txt += "<p>浏览器版本：" + navigator.appVersion + "</p>";
+		txt += "<p>启用Cookies：" + navigator.cookieEnabled + "</p>";
+		txt += "<p>硬件平台：" + navigator.platform + "</p>";
+		txt += "<p>用户代理：" + navigator.userAgent + "</p>";
+		txt += "<p>用户代理语言：" + navigator.systemLanguage + "</p>";
+		document.getElementById("example").innerHTML = txt;
+	</script>
+</body>
+</html>

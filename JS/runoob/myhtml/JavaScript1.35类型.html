@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我还是菜鸟</title>
+</head>
+<body>
+	<p>typeof操作符返回变量或表达式的类型。</p>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		document.getElementById("demo").innerHTML = 
+			"john " + typeof("john") + "<br>" + 
+			"3.14 " + typeof(3.14) + "<br>" + 
+			"false " + typeof(false) + "<br>" + 
+			"[1,2,3] " + typeof([1,2,3]) + "<br>" + 
+			"{name:'john',age:34} " + typeof({name:'john',age:34}) + "<br>" +
+			"null " + typeof(null) + "<br>" +
+			"undefined " + typeof(undefined);
+		var person;
+		document.write(person + "<br>" + typeof(person) + "<br>");
+		document.write(typeof(undefined) + "<br>" + typeof(null) + "<br>" + (null === undefined) + "<br>" + (null == undefined));
+	</script>
+</body>
+</html>

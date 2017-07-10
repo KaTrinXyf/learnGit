@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>含返回值的参数</title>
+</head>
+<body>
+	<P>举例含有参数的返回值</P>
+	<p id = "demo"></p>
+	<script type="text/javascript">
+		function myFunction(a,b)
+		{
+			return a + b ;
+		}
+		function fun_1()
+		{
+		document.getElementById("demo").innerHTML = myFunction(5,6);	
+		}
+		
+	</script>
+	<button onclick="fun_1()">戳我</button>
+</body>
+</html>

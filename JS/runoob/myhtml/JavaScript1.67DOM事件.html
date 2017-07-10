@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我还是菜鸟</title>
+	
+</head>
+<body>
+	<!-- <h1 onclick="this.innerHTML = 'Ooops!'">点击文本！</h1> -->
+	<h1 onclick="changetext(this)">点击文本！</h1>
+
+	<p>点击按钮执行<em>displayDate</em>()函数.</p>
+	<!-- <button onclick="displayDate()">点这里</button> -->
+	<button id="myBtn">点这里</button>
+	<p id="demo_1"></p>
+
+
+	<script type="text/javascript">
+		function changetext(id)
+		{
+			id.innerHTML = "Ooops!";
+		}
+		function displayDate()
+		{
+			document.getElementById("demo_1").innerHTML = Date();
+		}
+		document.getElementById("myBtn").onclick = function(){displayDate()};
+	</script>
+</body>
+</html>

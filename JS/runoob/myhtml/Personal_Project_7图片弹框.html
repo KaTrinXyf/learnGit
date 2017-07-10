@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片弹框</title>
+	<link rel="stylesheet" type="text/css" href="../myCss/Personal_Project_7图片弹框.css">
+	
+</head>
+<body>
+	<!-- 触发弹窗 -->
+	<img src="../images/prj_6.jpg" id="myImg" alt="文本描述信息(无背景图框，关闭按钮和提示信息位置显示错误)" width="300" height="200">
+
+	<!-- 弹窗 -->
+	<div id="myModal" class="modal">
+		<!-- 关闭按钮 -->
+		<span class="close" onclick="document.getElementById('myModal').style.display = 'none'">&times;</span>
+		<!-- 弹框内容 -->
+		<img src="" class="modal-content" id="img01">
+		<!-- 文本描述 -->
+		<div id="caption"></div>
+	</div>
+
+
+	<script type="text/javascript" src = "../myScript/Personal_Project_7图片弹窗.js"></script>
+</body>
+</html>

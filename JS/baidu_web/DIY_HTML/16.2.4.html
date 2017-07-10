@@ -1,0 +1,51 @@
+<!--edu_16_2_1-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>DOM节点树的应用</title>
+	<script type="text/javascript">
+		function $(id) 
+		{
+			// body...
+			return document.getElementById(id);
+		}
+		function validate()
+		{
+			var msg="用户名为：";
+			var username=$("username").value;
+			var psw=$("password").value;
+			var email=$("email").value;
+			msg = msg+username+"\n密码为："+psw+"\n邮箱地址为："+email;
+			alert(msg);  //输出
+		}
+	</script>
+</head>
+<body>
+	<form method="post" action="" name="myform">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" name="username" id="username"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" name="password" id="password"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>邮箱：</td>
+				<td><input type="text" name="email" id="email"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+				<input type="button" value="提交" onclick="validate()";>
+				<input type="reset">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

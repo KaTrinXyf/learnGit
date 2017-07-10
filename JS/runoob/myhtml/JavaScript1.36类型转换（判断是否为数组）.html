@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类型转换</title>
+</head>
+<body>
+	<p>constructor属性返回变量或对象的构造函数。</p>
+	<p id="demo"></p>
+	<p id = "demo_2"></p>
+	<p id = "demo_3"></p>
+	<p id = "demo_4"></p>
+	<script type="text/javascript">
+		document.getElementById("demo").innerHTML = 
+			"John " + "John".constructor + "<br>" + 
+			"3.14 " + (3.14).constructor + "<br>" +
+			"false " + false.constructor + "<br>" +
+			"[1,2,3,4] " + [1,2,3,4].constructor + "<br>" +
+			"{name:'John',age:34} " + {name:'John',age:34}.constructor + "<br>" +
+			"new Date() " + new Date().constructor + "<br>" + 
+			"function(){} " + function(){}.constructor;
+
+
+
+		//String和toString方法
+		var x = 123;
+		document.getElementById("demo_2").innerHTML = 
+			String(x) + "<br>" +
+			x.toString() + "<br>" + 
+			String(123) + "<br>" + 
+			(123).toString() + "<br>" + 
+			String(100+23) + "<br>" + 
+			(100+23).toString();
+
+		//判断对象是否为数组
+		document.write("<br>" + "<br>");
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		
+		function isArray(myArray)
+		{
+			return myArray.constructor.toString().indexOf("Array") > -1;
+		}
+		document.write(isArray(fruits) + "<br>");
+
+		//一元运算符进行数据类型转换
+		var y = 5,z = "xuyafeng";
+		var m = + y;
+		var n = + z;
+		document.getElementById("demo_3").innerHTML = 
+			typeof(m) + "  " + m +"<br>" + typeof(n) + "  " + n ;
+
+		var d = new Date();
+		// document.write(Number(d));
+		document.write(d.getTime() + "<br>");
+
+		//自动转换为字符串
+		var var_1 = {name:"Fjohn"};
+		var var_2 = [1,2,3,4];
+		var var_3 = new Date();
+		var var_4 = 123;
+		var var_5 = true;
+		var var_6 = false;
+		document.getElementById("demo_4").innerHTML = 
+			var_1 + "<br>" + 
+			var_2 + "<br>" + 
+			var_3 + "<br>" + 
+			var_4 + "<br>" + 
+			var_5 + "<br>" + 
+			var_6 + "<br>";
+		
+
+	</script>
+</body>
+</html>

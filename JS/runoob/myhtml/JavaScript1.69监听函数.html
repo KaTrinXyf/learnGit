@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>监听</title>
+</head>
+<body>
+	<p>该实例使用 addEventListener()方法在按钮中添加点击事件。</p>
+	<button id="myBtn">戳我</button>
+	<button id="Btn1">戳我</button>
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+
+	<p>实例在 window 对象中使用 addEventListener() 方法。</p>
+	<p>尝试重置浏览器的窗口触发 "resize" 事件句柄。</p>
+	<p id="demo3"></p>
+
+	<p>实例演示了在使用 addEventListener() 方法时如何传递参数。</p>
+	<p>点击按钮执行计算。</p>
+	<button type="button" id="Btn2">点我</button>
+	<p id="demo4"></p>
+	<script type="text/javascript">
+		document.getElementById("myBtn").addEventListener("click",displayDate);
+		function displayDate()
+		{
+			document.getElementById("demo1").innerHTML = Date();
+		}
+		document.getElementById("Btn1").addEventListener("click",func1);
+		document.getElementById("Btn1").addEventListener("click",func2);
+		document.getElementById("Btn1").addEventListener("mouseover",func3);
+		document.getElementById("Btn1").addEventListener("click",func4);
+		document.getElementById("Btn1").addEventListener("mouseout",func5);
+		function func1() 
+		{
+			alert('Hello World!');
+		}
+		function func2() 
+		{
+			alert('函数已执行!');
+		}
+		function func3()
+		{
+			document.getElementById("demo2").innerHTML += "Mouse over!<br>";
+		}
+		function func4()
+		{
+			document.getElementById("demo2").innerHTML += "Clicked!<br>";
+		}
+		function func5()
+		{
+			document.getElementById("demo2").innerHTML += "Mouse out!<br>";
+		}
+
+		window.addEventListener("resize",function()
+		{
+			document.getElementById('demo3').innerHTML = Math.random();
+		});
+
+		var p1 = 5;
+		var p2 = 7;
+		document.getElementById("Btn2").addEventListener("click",function()
+		{
+			func6(p1,p2);
+		});
+		function func6(a,b)
+		{
+			var result = a * b;
+			document.getElementById('demo4').innerHTML = result;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我还是菜鸟</title>
+</head>
+<body>
+	<h1>我的第一个Web页面</h1>
+	<p>浏览器中（Chrome、IE、Firefox）使用F12俩启用调试模式，在调试窗口中点击“Console”菜单。</p>
+
+	<p id="demo"></p>
+	<p>开启调试工具，代码执行到第三行前会停止执行。</p>
+	<script type="text/javascript">
+		var x = 15 * 5;
+		debugger;
+		document.getElementById("demo").innerHTML = x;
+	</script>
+</body>
+</html>
