@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我还是菜鸟</title>
+</head>
+<body>
+	<p id="demo_1"></p>
+	<p id="demo_2"></p>
+	<script type="text/javascript">
+		var myObj;
+		function myFunc_1(a,b)
+		{
+			return a * b;
+		}
+		// myObj = myFunc_1.call(myObj,10,2);
+		// document.getElementById("demo_1").innerHTML = myObj;
+		myArr = [10,2];
+		myObj = myFunc_1.apply(myObj,myArr);
+		document.getElementById("demo_2").innerHTML = myObj;
+	</script>
+</body>
+</html>

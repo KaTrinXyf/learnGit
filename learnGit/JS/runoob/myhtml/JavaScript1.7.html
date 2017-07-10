@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我是菜鸟</title>
+	<script type="text/javascript">
+		function myFunction()
+		{
+			x = document.getElementById('demo');
+			x.innerHTML = ("我的第一个JavaScript函数。")	
+		}
+	</script>
+</head>
+<body>
+	<h1>我的Web页面</h1>
+	<p id = "demo">
+		您只能在 HTML 输出流中使用 document.write。 如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+		脚本可位于 HTML 的 <body> 或 <head> 部分中，或者同时存在于两个部分中。
+通常的做法是把函数放入 <head> 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。
+	</p>
+	<button type="button" onclick="myFunction()">点击这里</button>
+</body>
+</html
+

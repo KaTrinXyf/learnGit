@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用误区</title>
+</head>
+<body>
+	<p id="demo"></p>
+	<p id="demo_2"></p>
+	<script type="text/javascript">
+		var x = 0;
+		var m = 10;
+		var n = "10";
+		document.getElementById("demo").innerHTML = Boolean(x == 10) + "<br>" + 
+			Boolean(x = 10) + "<br>" + 
+			//if 条件语句返回 false (不是我们预期的)因为条件语句执行为 x 赋值 0，0 为 false
+			Boolean(x = 0) + "<br>" +
+			Boolean(m == n) + "<br>" +
+			Boolean(m ===n);
+		var a = 10;
+		var b = "10";
+		switch(a)
+		{
+			// case 10:alert("Hello");
+		}
+		switch(b)
+		{
+			case 10:alert("Hello");
+		}
+
+		var x = 10 + "5";
+		document.getElementById("demo_2").innerHTML = x;
+	</script>
+</body>
+</html>

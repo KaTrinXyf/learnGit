@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式-表单验证</title>
+</head>
+<body>
+	<form name = "myform" action="" onsubmit="return myFunction()">
+		<div align = "center">
+			<table border="1" width="60%">
+				<tr>
+					<td colspan="2" align = center ><h3>学生信息管理</td>
+				</tr>
+				<tr>
+					<td height="39" width="463" bgcolor="#006699">
+						<font color="#FFFF00">
+						学生编号：<input type="text" maxlength="10" id="stuno" value="1201620453" name="">
+						(8位数字)
+						</font>
+					</td>
+					<td height="39" width="463" bgcolor="#006699">
+						<font color="#FFFF00">
+						学生名字：<input type="text" maxlength="10" id="stuname" value="许亚峰" name="">
+						（中文）
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td height="39" width="463" bgcolor="#006699">
+						<font color="#FFFF00">
+							邮箱地址：<input type="text" maxlength="10" id="email" value="244022656@qq.com" name="">
+						</font>
+					</td>
+					<td height="39" width="463" bgcolor="#006699">
+						<font color="#FFFF00">
+							电话号码：<input type="text" maxlength="10" id="tel" value="13007110850" name="">
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td height="53" width="985" bgcolor="#006699" colspan="2" align="center">
+						<input type="submit" value="提交表单" name="">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	<script type="text/javascript">
+		//是否带有小数
+		function isDecimal(strValue)
+		{
+			var objRegExp = /^\d+\.\d+$/;
+			return objRegExp.test(strValue);
+		}
+		//检验是否中文名称组成
+		function isChina(str)
+		{
+			var reg = /^[\u4E00-\u9FA5]{2,4}$/; //定义验证表达式
+			return reg.test(str); //进行验证
+		}
+		//检验是否全由10位数字组成
+		function isStudentNo(str)
+		{
+			var reg = /^[0-9]{10}$/; //定义验证表达式
+			return reg.test(str); //进行验证
+		}
+		//校验电话号码格式
+		function isTelNum(str)
+		{
+			var reg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
+			return reg.test(str);
+		}
+		//检验邮件地址是否合法
+		function isEmail(str)
+		{
+			var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+			return reg.test(str);
+		}
+
+		function myFunction()
+		{
+			if(!isStudentNo(document.getElementById("stuno").value))
+			{
+				alert("学生编号是10位数字");
+				document.getElementById("stuno").focus();
+				return false;
+			}
+			if(!isChina(document.getElementById("stuname").value))
+			{
+				alert("学生姓名必须为中文");
+				document.getElementById("stuname").focus();
+				return false;
+			}
+			if(!isEmail(document.getElementById("email").value))
+			{
+				alert("邮箱地址填写有误");
+				document.getElementById("email").focus();
+				return false;
+			}
+			if(!isTelNum(document.getElementById("tel").value))
+			{
+				alert("请填写正确的电话号码");
+				document.getElementById("tel").focus();
+				return false;
+			}
+			//运行到这里说明验证通过，返回true
+			// submit 提交按钮起作用提交表单
+			alert("提交成功");
+			return true;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Parse()</title>
+</head>
+<body>
+	<h2>从JSON对象中创建JavaScript对象</h2>
+	<p id="demo1"></p>
+	<h2>使用XMLHttpRequest来获取文件内容</h2>
+	<p>文件内容是标准的JSON格式，可以使用JSON.parse方法将其转换为JavaScript对象。</p>
+	<p id="demo2"></p>
+	<p>查看JSON文件数据<a href="http://www.runoob.com/try/ajax/json_demo.txt" target="_blank">json_demo.txt</a></p>
+	<h2>字符串转换为Date对象</h2>
+	<p id="demo3"></p>
+	<h2>字符串转换为函数</h2>
+	<p id="demo4"></p>
+
+	<script type="text/javascript">
+		var Obj1 = JSON.parse('{"name":"runoob","alexa":10000,"site":"www.runoob.com"}');
+		document.getElementById("demo1").innerHTML = Obj1.name + ":" + Obj1.site;
+
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() 
+		{
+			if(this.readyState == 4 && this.status == 200)
+			{
+				myObj1 = JSON.parse(this.responseText);
+				document.getElementById("demo2").innerHTML = myObj1.name;
+			}
+		}
+		xmlhttp.open("GET","http://www.runoob.com/try/ajax/json_demo.txt",true);
+		xmlhttp.send();
+
+		var text = '{"name":"Runoob","initDate":"2017-06-07","site":"www.runoob.com"}';
+		var Obj2 = JSON.parse(text,function(key,value)
+		{
+			if(key == "initDate")
+			{
+				return new Date(value);
+			}
+			else
+			{
+				return value;
+			}
+		});
+		document.getElementById("demo3").innerHTML = Obj2.name + "创建日期：" + Obj2.initDate;
+
+		var text2 = '{"name":"Runoob","alexa":"function() {return 10000;}","site":"www.runoob.com"}';
+		var Obj3 = JSON.parse(text2);
+		Obj3.alexa = eval("(" + Obj3.alexa + ")");
+		document.getElementById("demo4").innerHTML = Obj3.name + "的Alexa排名为：" + Obj3.alexa();
+	</script>
+</body>
+</html>
+

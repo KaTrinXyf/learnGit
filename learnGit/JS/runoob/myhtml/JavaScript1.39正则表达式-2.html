@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式——替换</title>
+</head>
+<body>
+	<p>替换"microsoft"为"Runoob":</p>
+	<button onclick="myFunction()">戳我</button>
+	<p id="demo">请访问Microsoft！</p>
+	<script type="text/javascript">
+		function myFunction()
+		{
+			var str = document.getElementById("demo").innerHTML ;
+		//	var txt = str.replace(/microsoft/i,"Runoob");
+			var txt = str.replace("Microsoft","Runoob");
+			document.getElementById("demo").innerHTML = txt;
+		}
+		var patt1 = new RegExp("e");
+		document.write(patt1.test("The best things in life are free.") + "<br>");
+		document.write(patt1.exec("The best things in life are free.") + "<br>");
+	</script>
+</body>
+</html>

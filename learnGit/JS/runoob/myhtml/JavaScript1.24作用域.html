@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域</title>
+</head>
+<body>
+	<p>局部变量在声明的函数外不可以访问</p>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		myFunction();
+		document.getElementById("demo").innerHTML = "carName 的类型是：" + typeof carName +" ，我可以显示 " + window.carName;
+		function myFunction()
+		{
+			carName = "Volvo";
+			alert(typeof carName);
+		}
+	</script>
+</body>
+</html>

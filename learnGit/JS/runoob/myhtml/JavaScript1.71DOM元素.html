@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM元素</title>
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">这是一个段落。</p>
+		<p id="p2">这是另一个段落。</p>
+	</div>
+
+	<script type="text/javascript">
+		//创建一个p元素
+		var para = document.createElement("p");
+		para.id = "test";
+		//创建一个文本节点
+		var node = document.createTextNode("这是一个新段落。");
+		//向p追加这个文本节点
+		para.appendChild(node);
+		//最后向一个已有的元素追加这个新的元素
+		//找到一个已有的元素
+		var element = document.getElementById("div1");
+		//向已存在的元素后添加新元素
+		element.appendChild(para);
+
+		//找到父元素
+		var parent = document.getElementById("div1");
+		// 找到子元素p
+		var child1 = document.getElementById("p1");
+		var child2 = document.getElementById("p2");
+		var child3 = document.getElementById("test");
+		//移除
+		parent.removeChild(child1);
+		parent.removeChild(child2);
+		parent.removeChild(child3);
+	</script>
+</body>
+</html>

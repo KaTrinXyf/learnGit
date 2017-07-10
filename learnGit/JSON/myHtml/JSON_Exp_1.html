@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON我是菜鸟</title>
+</head>
+<body>
+	<h2>JavaScript创建JSON对象</h2>
+	<p>
+		网站名称：<span id="jname"></span><br />
+		网站地址：<span id="jurl"></span><br />
+		网站slogan：<span id="jslogan"></span><br />
+	</p>
+	<script type="text/javascript">
+		var JSONObject = {
+			"name":"菜鸟教程",
+			"url":"www.runoob.com",
+			"slogan":"学的不仅是技术，更是梦想！"
+		};
+		document.getElementById("jname").innerHTML = JSONObject.name;
+		document.getElementById("jurl").innerHTML = JSONObject.url;
+		document.getElementById("jslogan").innerHTML = JSONObject.slogan;
+	</script>
+</body>
+</html>

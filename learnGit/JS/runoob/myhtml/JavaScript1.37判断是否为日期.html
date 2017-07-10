@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>判断是否为日期</title>
+</head>
+<body>
+	<p>
+		该函数判断对象是否为日期。
+	</p>
+	<p id = "demo"></p>
+	<script type="text/javascript">
+		var myDate = new Date();
+		document.getElementById("demo").innerHTML = isDate(myDate);
+		function isDate(mydate)
+		{
+			return mydate.constructor.toString().indexOf("Date") > -1;
+		}
+	</script>
+</body>
+</html>

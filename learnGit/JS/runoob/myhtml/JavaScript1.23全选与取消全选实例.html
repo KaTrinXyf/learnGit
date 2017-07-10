@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选与取消全选实例</title>
+</head>
+<body>
+	<button onmouseover="displaydate()" onmouseout="undisplaydate()">现在的时间是？</button><br>
+	<!--button onclick="document.getElementById('time').innerHTML = Date()">现在的时间是？</button><br-->
+	<p id = "time"></p>
+
+	看书<input type="checkbox" name="checkbox" value=1><br>
+	写字<input type="checkbox" name="checkbox" value=2><br>
+	看电影<input type="checkbox" name="checkbox" value=3><br>
+	打飞机<input type="checkbox" name="checkbox" value=4><br>
+	LOL<input type="checkbox" name="checkbox" value=5><br>
+	<button onclick="checkboxed('checkbox')">全选</button>
+	<button onclick="uncheckboxed('checkbox')">取消全选</button>
+	<script type="text/javascript">
+		function displaydate()
+		{
+			document.getElementById("time").innerHTML = Date();
+		}
+		function undisplaydate()
+		{
+			document.getElementById("time").innerHTML = "";
+		}
+		function checkboxed(objName)
+		{
+			var objNameList = document.getElementsByName(objName);
+			
+		//	alert(typeof(objNameList));
+			if (null != objNameList) 
+			{
+				alert("全选操作");
+				for (var i = 0; i < objNameList.length ; i++) 
+				{
+					objNameList[i].checked = "checked";
+				}
+			}
+		}
+		function uncheckboxed(objName)
+		{
+			var objNameList = document.getElementsByName(objName);
+			if (null != objNameList) 
+			{
+				alert("全选操作");
+				for (var i = 0; i < objNameList.length ; i++) 
+				{
+					objNameList[i].checked = "";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

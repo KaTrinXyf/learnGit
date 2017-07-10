@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>switch语句</title>
+</head>
+<body>
+	<p>点击下面的按钮来显示今天是周几：</p>
+	<button onclick="myFunction()">戳我会告诉你今天周几</button>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		function myFunction()
+		{
+			 var time = new Date().getDay();
+			 var x;
+			 switch(time)
+			 {
+			 	case 0:x = "今天是星期日。"; break;
+			 	case 1:x = "今天是星期一。期待周末。"; break;
+			 	case 2:x = "今天是星期二。期待周末。"; break;
+			 	case 3:x = "今天是星期三。期待周末。"; break;
+			 	case 4:x = "今天是星期四。期待周末。"; break;
+			 	case 5:x = "今天是星期五。期待周末。"; break;
+			 	case 6:x = "今天是星期六。"; break;
+			 	//default:x = "期待周末。";
+			 }
+			 document.getElementById("demo").innerHTML = x;
+		}
+	</script>
+</body>
+</html>
