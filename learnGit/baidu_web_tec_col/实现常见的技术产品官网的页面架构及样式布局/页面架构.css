@@ -1,0 +1,575 @@
+* {
+	box-sizing: border-box;	
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 1300px;  /*根据内容进行调整*/
+	height: 100%;
+	margin: 0 auto;
+}
+
+/*页面整体架构*/
+nav {
+	width: 100%;
+	height: 70px;
+	position: relative;
+	
+}
+
+#header {
+	width: 100%;
+	height: 700px;
+	position: relative;
+}
+
+#funclist {
+	width: 100%;
+	height: 240px;
+	position: relative;
+}
+
+#aboutworld	{
+	width: 100%;
+	height: 350px;
+	position: relative;
+	background-color: #EAE7E8;
+}
+
+#city_active_info {
+	width: 100%;
+	height: 345px;
+	position: relative;
+}
+
+#display_actives {
+	width: 100%;
+	height: 550px;
+	position: relative;
+	background-color: #EAE7E8;
+}
+
+#TIME {
+	width: 100%;
+	height: 566px;
+	position: relative;
+}
+
+#newEra {
+	width: 100%;
+	height: 750px;
+	position: relative;
+}
+
+#ToBeVolunteer {
+	width: 100%;
+	height: 700px;
+	position: relative;
+}
+
+#contect_us {
+	width: 100%;
+	height: 450px;
+	position: relative;
+}
+/*页面整体架构*/
+
+/*导航栏布局*/
+nav img {
+	position: absolute;
+	left: 55px;
+	top: 15px;
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+}
+nav p {
+	position: absolute;
+	left: 100px;
+	top: 17px;
+	display: inline-block;
+	font-size: 22px;
+	font-family: "微软雅黑";
+	font-weight: 500;
+}
+
+nav ul {
+	width: 40%;
+	height: 80px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	line-height: 80px;
+}
+
+nav ul li {
+	display: inline;
+	margin-left: 17px;
+}
+
+nav ul li a {
+	font-size: 15px;
+	color: #98AAA9;
+	text-decoration: none;
+}
+
+nav ul li a img {
+	width: 20px;
+	height: 24px;
+	position: absolute;
+	top: 28px;
+	left: 395px;
+}
+
+nav ul li:last-child a {
+	color: #B45151;
+	font-size: 18px;
+	margin-left: 18px;
+}
+/*导航栏布局*/
+
+/*头部布局*/
+header img {
+	position: absolute;
+	width: 1300px;
+	height: 700px;
+}
+
+header button {
+	width: 350px;
+	height: 70px;
+	background-color: #F75757;
+	color: #FFF;
+	border: none;
+	position: absolute;
+	font-size: 40px;
+	left: 120px;
+	top: 400px;
+	z-index: 2;
+}
+/*头部布局*/
+
+/*功能栏布局*/
+#funclist table {
+	width: 80%;
+	height: 150px;
+	text-align: center;
+	vertical-align: center;
+	margin: 30px auto;
+	
+}
+
+#funclist table img {
+	width: 50px;
+	height: 50px;
+}
+
+#funclist table th {
+	height: 100px;
+	width: 70px;
+	margin-bottom: 50px;
+}
+
+#funclist table td {
+	height: 30px;
+	width: 70px;
+	border-right: solid 3px #989191;
+	padding: 0 35px;
+}
+
+#funclist table td:nth-child(4) {
+	border-right: none;
+}
+/*功能栏布局*/
+
+/*NewWorld布局*/
+#aboutworld img {
+	position: absolute;
+	top: 70px;
+	left: 600px;
+}
+
+#aboutworld p {
+	position: absolute;
+	top: 190px;
+	left: 220px;
+	font-size: 52px;
+	color: #938A8A;
+}
+/*NewWorld布局*/
+
+/*城市活动信息检索布局*/
+#city_active_info img {
+	width: 1300px;
+}
+
+#Cover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1300px;
+	height: 100%;
+	background-color: #E36060;
+	filter:alpha(Opacity=30);
+	-moz-opacity:0.3;
+	opacity: 0.3;
+}
+
+#city_active_info ul {
+	width: 80%;
+	height: 80px;
+	position: absolute;
+	top: 180px;
+	left: 180px;
+	line-height: 80px;
+}
+
+#city_active_info ul li {
+	display: inline;
+	
+	margin-left: 25px;
+}
+
+#city_active_info ul li select {
+	width: 200px;
+	height: 40px;
+	border:  solid 1px #F04D4D;
+}
+
+#city_active_info button {
+	position: absolute;
+	top: 190px;	
+	left: 910px;
+	width: 220px;
+	height: 40px;
+	background-color: red;
+	border: none;
+}
+
+#city_active_info button a {
+	font-size: 20px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+#city_active_info ul li select option {
+	font-size: 25px;
+	color: #968A8A;
+}
+/*城市活动信息检索布局*/
+
+/*活动列表布局*/
+#beijing {
+	position: absolute;
+	width: 230px;
+	height: 400px;
+	top: 50px;
+	left: 120px;
+	text-align: center;
+}
+#shanghai {
+	position: absolute;
+	width: 230px;
+	height: 400px;
+	top: 50px;
+	left: 400px;
+	text-align: center;
+}
+#shenzhen {
+	position: absolute;
+	width: 230px;
+	height: 400px;
+	top: 50px;
+	left: 670px;
+	text-align: center;
+}
+#xianggang {
+	position: absolute;
+	width: 230px;
+	height: 400px;
+	top: 50px;
+	left: 950px;
+	text-align: center;
+}
+#beijing .desc,#shanghai .desc,#shenzhen .desc,#xianggang .desc {
+	font-size: 10px;
+	color: #907A7A;
+	display: inline-block;
+	margin-top: 7px;
+}
+#active_text {
+	font-size: 25px;
+}
+/*活动列表布局*/
+
+/*TIME布局*/
+.time_right {
+	width: 450px;
+	height: 566px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+.time_right #title {
+	font-size: 20px;
+	margin-top: 150px;
+	margin-bottom: 30px;
+	
+}
+.time_right #title span {
+	color: red;
+}
+.time_right .content {
+	width: 300px;
+	text-align: left;
+	margin: 0 auto;
+	line-height: 30px;
+	font-size: 15px;
+	color: #C1B7B7;
+}
+.time_right button {
+	width: 100px;
+	height: 30px;
+	background: #fff;
+	color: #E36A62;
+	border: solid 1px #E36A62;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.dot {
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 2px;
+	background-color: #fff;
+	border: solid 1px #bbb;
+	border-radius: 50px;
+	display: inline-block;
+	transition:background-color 0.6s ease;
+}
+.dot:first-child {
+	background-color: #bbb;
+}
+/*TIME布局*/
+
+/*新时代布局*/
+#NewEraLeft {
+	width: 425px;
+	height: 560px;
+	text-align: center;
+	background-color: #EA575D;
+	float: left;
+}
+#NewEraCenter {
+	width: 425px;
+	height: 560px;
+	text-align: center;
+	float: left;	
+}
+#NewEraRight img {
+	width: 440px;
+	height: 560px;
+}
+#NewEraLeft p {
+	margin-top: 200px;
+	font-size: 20px;
+	color: #fff;
+}
+#NewEraLeft hr {
+	height: 3px;
+	width: 40px;
+	background-color: #fff;
+	margin: 25px auto;
+	border: none;
+}
+#NewEraLeft button {
+	width: 180px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #EA575D;
+	color: #fff;
+	border: solid 1px #fff;
+}
+#NewEraCenter p {
+	margin-top: 200px;
+	font-size: 20px;
+	
+}
+#NewEraCenter hr {
+	height: 3px;
+	width: 40px;
+	background-color: #CBBEBE;
+	margin: 25px auto;
+	border: none;
+
+}
+#NewEraCenter button {
+	width: 180px;
+	height: 50px;
+	font-size: 20px;
+	color: #E71D1D;
+	background-color: #fff;
+	color: #E71D1D;
+	border: solid 1px #E71D1D;
+}
+/*新时代布局*/
+
+/*志愿者报名布局*/
+/*标题栏*/
+#VolunteerTitle {
+	width: 1300px;
+	height: 200px;
+	text-align: center;
+	vertical-align: center;
+	/*border: 1px solid red;*/
+	position: relative;
+}
+#VolunteerTitle p:first-child {
+	font-size: 20px;
+	font-family: "微软雅黑";
+	color: #524A4A;
+	margin-top: 110px;
+	font-weight: 600;
+}
+#VolunteerTitle hr {
+	height: 3px;
+	width: 40px;
+	background-color: #B92222;
+	border: 0;
+	margin: 10px auto;
+}
+#VolunteerTitle p:last-child {
+	width: 500px;
+	font-size: 12px;
+	color: #8E8484;
+	position: absolute;
+	left: 400px;
+}
+/*标题栏*/
+
+/*协议栏*/
+#VolunteerProtocol {
+	width:325px;
+	height: 450px;
+	float: left;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+#VolunteerProtocol .Pro {
+	width: 320px;
+	height: 150px;
+	margin: 0 auto;
+	position: relative;
+}
+#VolunteerProtocol .Pro h3 {
+	font-size: 17px;
+	color: #9F9090;
+	margin-bottom: 20px;
+}
+#VolunteerProtocol .Pro p {
+	font-size: 13px;
+	color: #B3A9A9;
+	line-height: 25px;
+}
+#VolunteerProtocol .Pro .more {
+	position: absolute;
+	right: 0;
+	color: #A99D9D;
+}
+/*协议栏*/
+
+/*表单*/
+#VolunteerForm {
+	width: 700px;
+	height: 450px;
+	float: left;
+}
+#VolunteerForm table td {
+	font-size: 15px;
+	color: #ADACAC;
+	width: 400px;
+	height: 60px;
+	border: solid 6px #fff;
+	background-color: #EEEDED;
+	padding-left: 20px;
+}
+#VolunteerForm table tr:nth-child(3) {
+	height: 180px;
+	vertical-align: top;
+}
+#VolunteerForm table tr:nth-child(3) p{
+	margin-top: 20px;
+}
+#VolunteerForm table tr button {
+	font-size: 18px;
+	color: #ADACAC;
+	background: #EEEDED;
+	border: none;
+}
+#VolunteerForm table tr:nth-child(4) {
+	text-align: center;
+}
+/*表单*/
+/*志愿者报名布局*/
+
+/*foot布局*/
+#contect_us {
+	text-align: center;
+	vertical-align: center;
+	height: 350px;
+	background-color: #2B3A48;
+}
+#contect_us .contect_title {
+	font-size: 25px;
+	color: #fff;
+	margin: 10px auto;
+	padding-top: 100px;
+}
+#contect_us .contect_text {
+	width: 500px;
+	font-size: 10px;
+	color: #CCC9C9;
+	margin: 20px auto;
+
+}
+#contect_us input {
+	height: 50px;
+	width: 400px;
+	border: none;
+	margin: 20px auto;
+	font-size: 17px;
+	color: #B8B6B6;
+}
+#contect_us input:last-child {
+	display: inline-block;
+	width: 100px;
+	color: #F1F1F1;
+	background-color: #727070;
+	margin-top: 2px;
+	margin-left: -3px;
+}
+.foot_bottom {
+	background-color: #080000;
+	position: relative;
+	z-index: 2;
+	height: 60px;
+	width: 100%;
+}
+.foot_bottom p:first-child {
+	font-size: 10px;
+	font-family: "微软雅黑";
+	color: #F0EDED;
+	position: absolute;
+	left: 100px;
+	top: 20px;
+}
+.foot_bottom p:last-child {
+	font-size: 8px;
+	color: #F0EDED;
+	position: absolute;
+	right: 50px;
+	top: 20px;	
+}
+/*foot布局*/

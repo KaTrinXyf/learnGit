@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常见技术产品网站页面架构</title>
+	<link rel="stylesheet" type="text/css" href="页面架构.css">
+</head>
+	<body>
+		<nav>
+			<img src="logo.png" alt="">
+			<p>新世界</p>
+			<ul>
+				<li><a href="" title="">首页</a></li>
+				<li><a href="" title="">最新活动</a></li>
+				<li><a href="" title="">项目介绍</a></li>
+				<li><a href="" title="">爱心社区</a></li>
+				<li><a href="" title="">关于我们</a></li>
+				<li><a href="" title=""><img src="signInLogo.png" alt="">登录</a></li>
+			</ul>
+		</nav>
+		<header id="header" class="">
+			<img src="header.png" alt="">
+			<button type="">开始体验</button>
+		</header><!-- /header -->
+		<main id="funclist">
+			<table>
+				<thead>
+					<tr>
+						<th><img src="round.png" alt=""></th>
+						<th><img src="square.png" alt=""></th>
+						<th><img src="flag.png" alt=""></th>
+						<th><img src="flower.png" alt=""></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>打造全新世界观，让你更爱你的生活</td>
+						<td>丰富多彩的公益活动，发挥新世界的主人公意识</td>
+						<td>时尚的新理念，超前体验未知的生活</td>
+						<td>完善的培养机制，培养你全新的世界观</td>
+					</tr>
+				</tbody>
+			</table>
+		</main>
+		<main id="aboutworld">
+			<img src="logo.png" alt="">
+			<p>关于新世界，你不知道的还有什么？</p>
+		</main>
+		<main id="city_active_info">
+			<img src="city_active_info.jpg" alt="">
+			<div id="Cover"></div>
+			<!-- <p>查找新世界城市活动信息</p>
+			<hr>
+			<p>每个城市都有不同的活动信息，请自主查询您所需要了解的城市</p> -->
+			<ul>
+				<li>
+					<select name="country" multiple>
+						<option value="">国家</option>
+						<option value="">中国</option>
+						<option value="">美国</option>
+						<option value="">日本</option>
+						<option value="">英国</option>
+						<option value="">法国</option>
+					</select>
+			</li>
+				<li>
+					<select name="province" multiple>
+						<option value="">省份</option>
+						<option value="">北京</option>
+						<option value="">上海</option>
+						<option value="">广东</option>
+						<option value="">浙江</option>
+						<option value="">湖北</option>
+						<option value="">山西</option>
+					</select>
+				</li>
+				<li>
+					<select name="city" multiple>
+						<option value="">城市</option>
+						<option value="">北京</option>
+						<option value="">天津</option>
+						<option value="">上海</option>
+						<option value="">深圳</option>
+						<option value="">杭州</option>
+						<option value="">武汉</option>
+						<option value="">成都</option>
+					</select>
+				</li>
+			</ul>	
+			<button type=""><a href="">搜索</a></button>
+		</main>
+		<main id="display_actives">
+			<div class="active_pic" id="beijing">
+				<img src="active_beijing.png" alt="北京活动" title="北京活动">
+				<p><span>北京活动</span><br><span class="desc">新社区大联盟</span></p>
+			</div>
+			<div class="active_pic" id="shanghai">
+				<p><span id="active_text">上&nbsp;&nbsp;&nbsp;&nbsp;海&nbsp;&nbsp;&nbsp;&nbsp;活&nbsp;&nbsp;&nbsp;&nbsp;动</span><br><span class="desc">夜上海新景观探索</span></p>
+				<img src="active_shanghai.png" alt="上海活动" title="上海活动">
+			</div>
+			<div class="active_pic" id="shenzhen">
+				<img src="active_shenzhen.png" alt="深圳活动" title="深圳活动">
+				<p><span>深圳活动</span><br><span class="desc">全新海岸线观点站</span></p>
+			</div>
+			<div class="active_pic" id="xianggang">
+				<img src="active_xiagngang.png" alt="香港活动" title="香港活动">
+				<p><span>香港活动</span><br><span class="desc">奢侈消费大派送</span></p>
+			</div>
+		</main>
+		<main id="TIME">
+			<div class="time_left">
+				<img src="newWorld.jpg" alt="">
+				<!-- <p><span>新世界</span><br><span>TIME</span><br><span>@新世界 - 北京</span><br><span>2016.04.01</span></p>
+				<div class="angLeft"></div> -->
+			</div>
+			<div class="time_right">
+				<p id="title">新世界/<span>01</span></p>
+				<p class="content">新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方新世界是个美妙地方</p>
+				<button type="">更多详情</button>
+				<div id="dots">
+					<p class="dot"></p>
+					<p class="dot"></p>
+					<p class="dot"></p>	
+				</div>
+			</div>
+		</main>
+		<main id="NewEra">
+			<div id="NewEraLeft">
+				<p>新时代<br>关于爱生活的我们</p>
+				<hr>
+				<button type="">查看更多</button>
+			</div>
+			<div id="NewEraCenter">
+				<p>新时代<br>关于爱生活的我们</p>
+				<hr>
+				<button type="">查看更多</button>
+			</div>
+			<div id="NewEraRight">
+				<img src="newEra.jpg" alt="">
+			</div>
+		</main>
+		<main id="ToBeVolunteer">
+			<div id="VolunteerTitle">
+				<p>成为我们的志愿者</p>
+				<hr>
+				<p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情那就不要犹豫，快来加入我们，成为改变所有人生活的人</p>
+			</div>
+			<div id="VolunteerProtocol">
+				<div class="Pro">
+					<h3>新世界志愿者协议</h3>
+					<p>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则......</p>
+					<p class="more"><span>∨</span>more</p>
+				</div>
+				<div class="Pro">
+					<h3>新世界志愿者协议</h3>
+					<p>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则</p>
+					<p class="more"><span>∨</span>more</p>
+				</div>
+				<div class="Pro">
+					<h3>更多条款</h3>
+					<p class="more"><span>∨</span>more</p>
+				</div>
+			</div>
+			<div id="VolunteerForm">
+				<table>
+					<tbody>
+						<tr>
+							<td>姓名：</td>
+							<td>年龄：</td>
+						</tr>
+						<tr>
+							<td>联系方式：</td>
+							<td>联系地址：</td>
+						</tr>
+						<tr>
+							<td colspan="2" rowspan="" headers=""><p>请简单描述您梦想的生活：</p></td>
+						</tr>
+						<tr>
+							<td colspan="2" rowspan="" headers=""><button type="">提交申请</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+		<footer>
+			<div id="contect_us">
+				<p class="contect_title">联系我们</p>
+				<p class="contect_text">为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯也可以通过以下任何方式关注我们动态</p>
+				<input type="" name="" value="244022656@qq.com">
+				<input type="submit" name="" value="提交">
+			</div>
+			<div class="foot_bottom">
+				<p>&copy;2016新世界</p>
+				<p>Back to top</p>
+			</div>
+		</footer>
+	</body>
+</html>
