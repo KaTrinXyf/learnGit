@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE JavaScript Task 01</title>
+</head>
+<body>
+	<h3>污染城市列表</h3>
+	<ul id="aqi-list">
+		
+	</ul>
+	<script type="text/javascript" charset="utf-8" async defer>
+		var aqiDate = [
+		["北京",90],
+		["上海",50],
+		["福州",10],
+		["广州",50],
+		["成都",90],
+		["西安",100]
+		];
+		(function() 
+		{
+			//注意 getElementById是document的函数
+			var ulNode = document.getElementById('aqi-list');
+			var cityList = new Array();
+			var j=0;//此处j应该进行定义
+			for(var i=0;i<aqiDate.length;i++)
+			{
+				if (aqiDate[i][1] >= 50) 
+				{
+					cityList[j] = aqiDate[i];
+					j++;
+				}
+			}
+			//高阶函数排序机制
+			//排序 升序     此处有疑惑？
+			cityList.sort(function(x,y)
+			{
+				// return x[1]-y[1];
+				// x>y 返回1，x<y 返回-1，相同返回0
+				if (x[1]<y[1]) 
+				{
+					return -1;
+				}
+				else if (x[1]>y[1]) 
+				{
+					return 1;
+				}
+				return 0;
+			});
+			//降序
+			cityList.reverse();
+			for (var i = 0; i < cityList.length; i++) 
+			{
+				//创建节点li
+				var liNode = document.createElement("li");
+				//此处有疑惑
+				liNode.innerHTML = "第" + i + "名：" + cityList[i][0]+"，污染指数："+cityList[i][1];
+				ulNode.appendChild(liNode);//增加节点函数为appendChild()而不是append()
+			}
+		})();
+	</script>
+</body>
+</html>

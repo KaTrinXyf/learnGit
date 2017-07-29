@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE JavaScript Task 04</title>
+
+	<style type="text/css" media="screen">
+		ul {
+			display: flex;
+			align-items: flex-end;
+		}
+		li {
+			display: inline-block;
+			background-color: #F77676;
+			margin-left: 2px;
+			list-style: none;
+			width: 20px;
+			
+			cursor: pointer;
+		}
+		li:hover {
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="number" value="" id="inputbox">
+	<button type="button" id="btnLeftIn">左侧入</button>
+	<button type="button" id="btnRightIn">右侧入</button>
+	<button type="button" id="btnLeftOut">左侧出</button>
+	<button type="button" id="btnRightOut">右侧出</button>
+	<!-- 数字队列 -->
+	<ul id="NumList"></ul>
+	<button type="button" id="btnSort">排序</button>
+
+	<script>
+		// 绑定变量
+		var inputbox = document.getElementById('inputbox');
+		var btnLeftIn = document.getElementById('btnLeftIn');
+		var btnRightIn = document.getElementById('btnRightIn');
+		var btnLeftOut = document.getElementById('btnLeftOut');
+		var btnRightOut = document.getElementById('btnRightOut');
+		var NumList = document.getElementById('NumList');
+  		var btnSort = document.getElementById('btnSort');
+		//已插入的数字个数
+		var total = 1;
+		// 插入数字
+		function insert(direction)
+		{
+			if ((inputbox.value == "") || (inputbox.value < 10) || (inputbox.value > 100) || (isNaN(inputbox.value))) 
+			{
+				//输入框为空，点击插入按钮时候弹出对话框
+				alert("请输入10-100之间的数字！");
+				inputbox.focus();
+			}
+			else if(total>60)
+			{
+				alert("已输入超过60个元素！")
+				return 0;
+			}
+			else
+			{
+				// 新建li节点并增加内容
+				var liNode = document.createElement("li");
+				liNode.innerHTML = inputbox.value;
+				if(direction === "left")//从左侧插入
+				{
+					NumList.insertBefore(liNode,NumList.firstChild);//从前方插入
+				}
+				else if (direction === "right")//从右侧插入
+				{
+					NumList.appendChild(liNode);//在末尾追加
+				}
+				liNode.style.height = inputbox.value *2 + "px";
+				total++;
+				inputbox.value = "";
+				inputbox.focus();
+			}
+		}
+
+		//删除数字
+		function del(node,direction)
+		{
+			if(NumList.childNodes.length <= 0)
+			{
+				alert("不存在元素可以删除！");
+				return false;
+			}
+			else
+			{
+				if (direction === "left") 
+				{
+					alert("删除数字：" + NumList.firstChild.innerText + "!");
+					NumList.removeChild(NumList.firstChild);
+				}
+				else if (direction === "right")
+				{
+					alert("删除数字：" + NumList.lastChild.innerText + "!")
+					NumList.removeChild(NumList.lastChild);
+				}
+				else
+				{
+					alert("删除数字：" + NumList.removeChild(node).innerText + "!");
+				}
+			}
+		}
+		//排序
+		function bubble_sort() 
+		{
+			var len = NumList.childNodes.length;
+			if(len <= 1)
+			{
+				return;
+			}
+			else
+			{
+				for (var i = 0; i < len; i++) 
+				{
+					for (var j = 0; j < len-i-1; j++) 
+					{
+						setTimeout((function(k)
+						{
+							var linodes = NumList.childNodes;
+							var k0 = parseInt(linodes[k].style.height);
+							var k1 = parseInt(linodes[k+1].style.height);
+ 							if(k0 > k1)
+ 							{
+ 								linodes[k].style.height = k1 + "px";
+ 								//linodes[k].style.marginTop = (100 - k1) + "px";
+ 								linodes[k].innerHTML = k1/2;
+ 								linodes[k+1].style.height = k0 + "px";
+ 								//linodes[k+1].style.marginTop = (100 - k0) + "px";
+ 								linodes[k+1].innerHTML = k0/2;
+ 							}
+						})(j),1000);	
+					}	
+				}
+			}
+		}
+
+		// 按钮
+		btnLeftIn.onclick = function() {insert("left");};
+		btnRightIn.onclick = function() {insert("right");};
+		btnLeftOut.onclick = function() {del(100,"left");};
+		btnRightOut.onclick = function() {del(-1,"right");};
+		NumList.onclick = function() {del(event.target)};
+		btnSort.onclick = function() {bubble_sort();};
+	</script>
+</body>
+</html>

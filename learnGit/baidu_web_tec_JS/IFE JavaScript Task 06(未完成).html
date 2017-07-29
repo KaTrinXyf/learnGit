@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IFE JavaScript Task 04</title>
+
+	<style type="text/css" media="screen">
+		#inputbox {
+			box-sizing: border-box;
+			width: 100px;
+			height: 50px;
+		}
+		li {
+			display: inline-block;
+			background-color: #F77676;
+			color: #F4F2F2;
+			font-size: 20px;
+			text-align: center;
+			padding: 5px;
+			margin: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<textarea name="inputText" id="inputbox"></textarea>
+	<button type="button" id="btnLeftIn">左侧入</button>
+	<button type="button" id="btnRightIn">右侧入</button>
+	<button type="button" id="btnLeftOut">左侧出</button>
+	<button type="button" id="btnRightOut">右侧出</button>
+	<input type="text" id="inputsearch" name="" value="" placeholder="">
+	<button type="button" id="btnSearch"></button>
+	<!-- 数字队列 -->
+	<ul id="NumList"></ul>
+
+	<script>
+		// 绑定变量
+		var inputbox = document.getElementById('inputbox');
+		var btnLeftIn = document.getElementById('btnLeftIn');
+		var btnRightIn = document.getElementById('btnRightIn');
+		var btnLeftOut = document.getElementById('btnLeftOut');
+		var btnRightOut = document.getElementById('btnRightOut');
+		var inputsearch = document.getElementById('inputsearch');
+		var btnSearch = document.getElementById('btnSearch');
+		var NumList = document.getElementById('NumList');
+
+		// 插入数字
+		function insert(direction)
+		{
+			if (inputbox.value == "") 
+			{
+				//输入框为空，点击插入按钮时候弹出对话框
+				alert("请输入需要插入的值");
+				inputbox.focus();
+			}
+			/*else if (isNaN(inputbox.value))
+			{
+				//若输入内容非数字，则弹出提示框
+				alert("只能输入数字！");
+				inputbox.value = "";
+				inputbox.focus();
+			}*/
+			else
+			{
+				// 新建li节点并增加内容
+				var liNode = document.createElement("li");
+				liNode.innerHTML = inputbox.value;
+				if(direction === "left")//从左侧插入
+				{
+					NumList.insertBefore(liNode,NumList.firstChild);//从前方插入
+				}
+				else if (direction === "right")//从右侧插入
+				{
+					NumList.appendChild(liNode);//在末尾追加
+				}
+			}
+		}
+
+		//删除数字
+		function del(node,direction)
+		{
+			if(NumList.childNodes.length <= 0)
+			{
+				alert("不存在元素可以删除");
+				return false;
+			}
+			else
+			{
+				if (direction === "left") 
+				{
+					alert("删除数字：" + NumList.firstChild.innerText + "!");
+					NumList.removeChild(NumList.firstChild);
+				}
+				else if (direction === "right")
+				{
+					alert("删除数字：" + NumList.lastChild.innerText + "!")
+					NumList.removeChild(NumList.lastChild);
+				}
+				else
+				{
+					alert("删除数字：" + NumList.removeChild(node).innerText + "!");
+				}
+			}
+		}
+		// 按钮
+		btnLeftIn.onclick = function() {insert("left");};
+		btnRightIn.onclick = function() {insert("right");};
+		btnLeftOut.onclick = function() {del(100,"left");};
+		btnRightOut.onclick = function() {del(-1,"right");};
+		NumList.onclick = function() {del(event.target)};
+	</script>
+</body>
+</html>
